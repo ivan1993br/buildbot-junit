@@ -1,0 +1,53 @@
+2019-09-14 20:48:25-0300 [-] Log opened.
+2019-09-14 20:48:25-0300 [-] --> test_junit.TestShellJUnitCommandExecution.test_constructor_args_kwargs <--
+2019-09-14 20:48:25-0300 [-] --> test_junit.TestShellJUnitCommandExecution.test_constructor_args_validity <--
+2019-09-14 20:48:25-0300 [-] --> test_junit.TestShellJUnitCommandExecution.test_doStepIf_False <--
+2019-09-14 20:48:25-0300 [-] ShellCommand.startCommand(cmd=FakeRemoteCommand('shell',{'workdir': 'wkdir', 'command': 'echo hello', 'env': {}, 'want_stdout': 1, 'want_stderr': 1, 'initial_stdin': None, 'timeout': 1200, 'maxTime': None, 'logfiles': {}, 'usePTY': None, 'logEnviron': True}))
+2019-09-14 20:48:25-0300 [-]   cmd.args = {'workdir': 'wkdir', 'command': 'echo hello', 'env': {}, 'want_stdout': 1, 'want_stderr': 1, 'initial_stdin': None, 'timeout': 1200, 'maxTime': None, 'logfiles': {}, 'usePTY': None, 'logEnviron': True}
+2019-09-14 20:48:25-0300 [-] BuildStep.failed; traceback follows
+	Traceback (most recent call last):
+	  File "/home/ivantarifa/buildbot/bb-master/sandbox/lib/python3.6/site-packages/twisted/internet/defer.py", line 1418, in _inlineCallbacks
+	    result = g.send(result)
+	  File "/home/ivantarifa/buildbot/bb-master/sandbox/lib/python3.6/site-packages/buildbot-2.4.1-py3.6.egg/buildbot/process/buildstep.py", line 567, in startStep
+	    self.results = yield self.run()
+	  File "/home/ivantarifa/buildbot/bb-master/sandbox/lib/python3.6/site-packages/twisted/internet/defer.py", line 1613, in unwindGenerator
+	    return _cancellableInlineCallbacks(gen)
+	  File "/home/ivantarifa/buildbot/bb-master/sandbox/lib/python3.6/site-packages/twisted/internet/defer.py", line 1529, in _cancellableInlineCallbacks
+	    _inlineCallbacks(None, g, status)
+	--- <exception caught here> ---
+	  File "/home/ivantarifa/buildbot/bb-master/sandbox/lib/python3.6/site-packages/buildbot-2.4.1-py3.6.egg/buildbot/process/buildstep.py", line 567, in startStep
+	    self.results = yield self.run()
+	  File "/home/ivantarifa/buildbot/bb-master/sandbox/lib/python3.6/site-packages/twisted/internet/defer.py", line 1418, in _inlineCallbacks
+	    result = g.send(result)
+	  File "/home/ivantarifa/buildbot/bb-master/sandbox/lib/python3.6/site-packages/buildbot-2.4.1-py3.6.egg/buildbot/process/buildstep.py", line 697, in run
+	    results = yield self._start_deferred
+	builtins.TypeError: 'ExpectShell' object does not support indexing
+	
+2019-09-14 20:48:25-0300 [-] releaseLocks(JUnitShellCommand('faker_report_dir', command='echo hello')): []
+2019-09-14 20:48:25-0300 [-] unexpected result from step; dumping logs
+2019-09-14 20:48:25-0300 [-] stdio stdout:
+	hello
+2019-09-14 20:48:25-0300 [-] err.text stdout:
+	Traceback (most recent call last):
+	  File "/home/ivantarifa/buildbot/bb-master/sandbox/lib/python3.6/site-packages/twisted/internet/defer.py", line 1418, in _inlineCallbacks
+	    result = g.send(result)
+	  File "/home/ivantarifa/buildbot/bb-master/sandbox/lib/python3.6/site-packages/buildbot-2.4.1-py3.6.egg/buildbot/process/buildstep.py", line 567, in startStep
+	    self.results = yield self.run()
+	  File "/home/ivantarifa/buildbot/bb-master/sandbox/lib/python3.6/site-packages/twisted/internet/defer.py", line 1613, in unwindGenerator
+	    return _cancellableInlineCallbacks(gen)
+	  File "/home/ivantarifa/buildbot/bb-master/sandbox/lib/python3.6/site-packages/twisted/internet/defer.py", line 1529, in _cancellableInlineCallbacks
+	    _inlineCallbacks(None, g, status)
+	--- <exception caught here> ---
+	  File "/home/ivantarifa/buildbot/bb-master/sandbox/lib/python3.6/site-packages/buildbot-2.4.1-py3.6.egg/buildbot/process/buildstep.py", line 567, in startStep
+	    self.results = yield self.run()
+	  File "/home/ivantarifa/buildbot/bb-master/sandbox/lib/python3.6/site-packages/twisted/internet/defer.py", line 1418, in _inlineCallbacks
+	    result = g.send(result)
+	  File "/home/ivantarifa/buildbot/bb-master/sandbox/lib/python3.6/site-packages/buildbot-2.4.1-py3.6.egg/buildbot/process/buildstep.py", line 697, in run
+	    results = yield self._start_deferred
+	builtins.TypeError: 'ExpectShell' object does not support indexing
+	
+2019-09-14 20:48:25-0300 [-] --> test_junit.TestShellJUnitCommandExecution.test_getLegacySummary_from_empty_command <--
+2019-09-14 20:48:25-0300 [-] --> test_junit.TestShellJUnitCommandExecution.test_getLegacySummary_from_med_command <--
+2019-09-14 20:48:25-0300 [-] --> test_junit.TestShellJUnitCommandExecution.test_getLegacySummary_from_med_command_list <--
+2019-09-14 20:48:25-0300 [-] --> test_junit.TestShellJUnitCommandExecution.test_getLegacySummary_from_short_command <--
+2019-09-14 20:48:25-0300 [-] --> test_junit.TestShellJUnitCommandExecution.test_getLegacySummary_from_short_command_list <--

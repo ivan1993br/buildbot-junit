@@ -1,1 +1,1 @@
-from junit import JUnitShellCommand
+from .junit import JUnitShellCommand

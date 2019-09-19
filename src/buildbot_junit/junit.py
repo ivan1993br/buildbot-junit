@@ -1,9 +1,10 @@
 import os
 import stat
 import xunitparser
-from buildbot.status.results import SUCCESS, WARNINGS, FAILURE
+from buildbot.status.builder import SUCCESS, WARNINGS, FAILURE
 from buildbot.steps.shell import ShellCommand
 from buildbot.process import buildstep
+from buildbot.util import flatten
 
 
 class JUnitShellCommand(ShellCommand):
@@ -15,7 +16,8 @@ class JUnitShellCommand(ShellCommand):
         self.report_dir = report_dir
 
     def commandComplete(self, cmd):
-        cmd = buildstep.RemoteCommand('stat', {'file': os.path.join(self.getWorkdir(), self.report_dir)})
+        #cmd = buildstep.RemoteCommand('stat', {'file': self.report_dir})
+        cmd = buildstep.RemoteCommand('stat', {'file': "~/dev/install/log/test-results/ros_driver_base"})
 
         d = self.runCommand(cmd)
         d.addCallback(lambda res: self.findReportsDir(cmd))
@@ -34,11 +36,12 @@ class JUnitShellCommand(ShellCommand):
             self.finished(WARNINGS)
             return
 
-        cmd = buildstep.RemoteCommand('glob', {'path': os.path.join(self.getWorkdir(), self.report_dir, '*.xml')})
+        #cmd = buildstep.RemoteCommand('glob', {'path': self.report_dir.append('*.xml')})
+        cmd = buildstep.RemoteCommand('glob', {'path': "~/dev/install/log/test-results/ros_driver_base"})
 
         d = self.runCommand(cmd)
         d.addCallback(lambda res: self.findReportsFiles(cmd))
-        d.addErrback(self.failed)
+        #d.addErrback(self.failed)
         return d
 
     def findReportsFiles(self, cmd):
